@@ -1,0 +1,40 @@
+{
+  "variantName": "cta-tiles",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-04-02T15:04:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.vplates.com.au/",
+    "originPage": "homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "compact",
+    "purpose": "cta-navigation",
+    "imagePattern": "icon",
+    "structure": "4-column horizontal bar with icon tiles and arrow links"
+  },
+  "contentPattern": {
+    "structure": "icon + link-text + chevron",
+    "buttonCount": 0,
+    "imageCount": 4
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "key task navigation bars",
+      "quick links strips",
+      "CTA action bars"
+    ],
+    "notSuitableFor": [
+      "product card grids",
+      "content cards with descriptions",
+      "image-heavy card layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-04-02T15:04:00.000Z"
+  }
+}

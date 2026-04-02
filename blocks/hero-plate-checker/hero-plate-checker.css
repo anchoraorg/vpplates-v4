@@ -1,0 +1,85 @@
+.hero-plate-checker-container .hero-plate-checker-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero-plate-checker {
+  position: relative;
+  padding: 40px 24px;
+  min-height: 300px;
+  background-color: var(--color-black, #000);
+  color: #fff;
+}
+
+.hero-plate-checker h1,
+.hero-plate-checker h2 {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+}
+
+.hero-plate-checker .hero-plate-checker-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.hero-plate-checker .hero-plate-checker-form-col {
+  flex: 1;
+}
+
+.hero-plate-checker .hero-plate-checker-preview-col {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-plate-checker picture {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+.hero-plate-checker img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-plate-checker a.button {
+  background-color: var(--color-brand-green, #43B02A);
+  border: none;
+  color: #fff;
+  padding: 12px 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.hero-plate-checker a.button:hover {
+  background-color: #3a9a24;
+}
+
+@media (width >= 900px) {
+  .hero-plate-checker {
+    padding: 60px 32px;
+  }
+
+  .hero-plate-checker .hero-plate-checker-content {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .hero-plate-checker h1,
+  .hero-plate-checker h2 {
+    font-size: 2.5rem;
+  }
+}

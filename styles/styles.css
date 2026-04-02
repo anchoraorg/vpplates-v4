@@ -16,12 +16,23 @@
   --light-color: #f8f8f8;
   --dark-color: #505050;
   --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  --link-color: #43b02a;
+  --link-hover-color: #3a9a24;
+
+  /* vplates design tokens */
+  --color-brand-green: #43b02a;
+  --color-black: #000;
+  --color-surface-light: #f5f5f5;
+  --color-text-dark: #231f20;
+  --color-body: #333;
+  --color-accent-yellow: #fec401;
 
   /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  --body-font-family: 'os', arial, helvetica, sans-serif;
+  --heading-font-family: 'm', arial, helvetica, sans-serif;
+  --font-body: 'os', arial, helvetica, sans-serif;
+  --font-heading: 'm', arial, helvetica, sans-serif;
+  --font-plate: 'standard', monospace;
 
   /* body sizes */
   --body-font-size-m: 22px;

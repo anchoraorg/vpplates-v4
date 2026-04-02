@@ -1,0 +1,40 @@
+{
+  "variantName": "social-feed",
+  "baseBlock": "embed",
+  "version": "1.0.0",
+  "created": "2026-04-02T15:04:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.vplates.com.au/",
+    "originPage": "homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "social-media-feed",
+    "imagePattern": "large",
+    "structure": "heading + Instagram grid embed"
+  },
+  "contentPattern": {
+    "structure": "H2-heading + SnapWidget-iframe",
+    "buttonCount": 0,
+    "imageCount": 8
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "Instagram feed sections",
+      "social media showcase sections",
+      "user-generated content displays"
+    ],
+    "notSuitableFor": [
+      "video embeds",
+      "YouTube players",
+      "standard iframe embeds"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-04-02T15:04:00.000Z"
+  }
+}

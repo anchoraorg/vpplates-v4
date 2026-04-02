@@ -1,0 +1,40 @@
+{
+  "variantName": "cards-product",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-04-02T15:04:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.vplates.com.au/",
+    "originPage": "homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "product-display",
+    "imagePattern": "large",
+    "structure": "image + title + description + learn-more-link"
+  },
+  "contentPattern": {
+    "structure": "product-image + H4-title + tagline + description + CTA-link",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "product listing pages",
+      "product category showcases",
+      "product comparison grids"
+    ],
+    "notSuitableFor": [
+      "CTA navigation bars",
+      "team member cards",
+      "testimonial cards"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-04-02T15:04:00.000Z"
+  }
+}

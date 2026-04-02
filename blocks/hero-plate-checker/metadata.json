@@ -1,0 +1,40 @@
+{
+  "variantName": "hero-plate-checker",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-04-02T15:04:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.vplates.com.au/",
+    "originPage": "homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "plate-checker",
+    "imagePattern": "noimg",
+    "structure": "heading + form + plate-preview + anchor-link"
+  },
+  "contentPattern": {
+    "structure": "heading + radio-toggle + text-input + submit-button + scroll-link",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "plate checker pages",
+      "vehicle registration lookup pages",
+      "interactive hero forms"
+    ],
+    "notSuitableFor": [
+      "standard hero banners",
+      "image-focused hero sections",
+      "simple text hero blocks"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-04-02T15:04:00.000Z"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "variantName": "columns-feature",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-04-02T15:04:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.vplates.com.au/",
+    "originPage": "homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "feature-content",
+    "imagePattern": "large",
+    "structure": "image-col + text-col with heading + description + CTA"
+  },
+  "contentPattern": {
+    "structure": "2-column: image + heading + paragraph + button",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "feature highlight sections",
+      "about us sections",
+      "service descriptions"
+    ],
+    "notSuitableFor": [
+      "multi-column data tables",
+      "comparison grids",
+      "text-only layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-04-02T15:04:00.000Z"
+  }
+}

@@ -1,0 +1,78 @@
+.cta-tiles-container .cta-tiles-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.cta-tiles {
+  background-color: var(--color-black, #000);
+  padding: 0;
+}
+
+.cta-tiles > ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cta-tiles > ul > li {
+  border: none;
+  border-right: 1px solid rgb(255 255 255 / 20%);
+  background-color: transparent;
+  text-align: center;
+  padding: 20px 16px;
+}
+
+.cta-tiles > ul > li:last-child {
+  border-right: none;
+}
+
+.cta-tiles .cta-tiles-card-body {
+  margin: 0;
+}
+
+.cta-tiles .cta-tiles-card-body a {
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-weight: bold;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.cta-tiles .cta-tiles-card-body a:hover {
+  color: var(--color-brand-green, #43B02A);
+}
+
+.cta-tiles .cta-tiles-card-body a::after {
+  content: '›';
+  font-size: 1.4em;
+}
+
+.cta-tiles .cta-tiles-card-image {
+  line-height: 0;
+  display: none;
+}
+
+.cta-tiles > ul > li img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+@media (width >= 900px) {
+  .cta-tiles > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .cta-tiles .cta-tiles-card-image {
+    display: block;
+    margin-bottom: 8px;
+  }
+}

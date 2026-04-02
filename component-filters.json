@@ -19,9 +19,30 @@
     ]
   },
   {
+    "id": "cards-product",
+    "components": [
+      "product-card"
+    ]
+  },
+  {
     "id": "cards",
     "components": [
       "card"
+    ]
+  },
+  {
+    "id": "columns-feature",
+    "components": [
+      "column"
+    ]
+  },
+  {
+    "id": "column",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title"
     ]
   },
   {
@@ -37,6 +58,18 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "cta-tiles",
+    "components": [
+      "cta-tile"
+    ]
+  },
+  {
+    "id": "tabs-promo-gallery",
+    "components": [
+      "tabs-promo-gallery-item"
     ]
   }
 ]

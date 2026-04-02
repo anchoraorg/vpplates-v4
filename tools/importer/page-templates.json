@@ -1,0 +1,123 @@
+{
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://www.vplates.com.au/"
+      ],
+      "description": "Homepage template with hero plate checker, tabbed product gallery, CTA tiles, social feed, and standard header/footer",
+      "blocks": [
+        {
+          "name": "header",
+          "instances": [
+            "header.header"
+          ]
+        },
+        {
+          "name": "hero-plate-checker",
+          "instances": [
+            ".component.quick-combo"
+          ]
+        },
+        {
+          "name": "cta-tiles",
+          "instances": [
+            ".cta-tiles__list"
+          ]
+        },
+        {
+          "name": "tabs-promo-gallery",
+          "instances": [
+            ".promo-gallery"
+          ]
+        },
+        {
+          "name": "social-feed",
+          "instances": [
+            ".instagram"
+          ]
+        },
+        {
+          "name": "footer",
+          "instances": [
+            "footer.footer"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1-header",
+          "name": "Header",
+          "selector": "header.header",
+          "style": "dark",
+          "blocks": [
+            "header"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2-alert-banner",
+          "name": "Alert Banner",
+          "selector": ".promo-banner",
+          "style": "accent-yellow",
+          "blocks": [],
+          "defaultContent": [
+            ".promo-banner__text"
+          ]
+        },
+        {
+          "id": "section-3-hero-plate-checker",
+          "name": "Hero Plate Checker",
+          "selector": ".component.quick-combo",
+          "style": "dark",
+          "blocks": [
+            "hero-plate-checker"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4-key-tasks",
+          "name": "Key Tasks Navigation",
+          "selector": ".cta-tiles__list",
+          "style": null,
+          "blocks": [
+            "cta-tiles"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-5-product-carousel",
+          "name": "Product Category Carousel",
+          "selector": ".promo-gallery",
+          "style": "light-grey",
+          "blocks": [
+            "tabs-promo-gallery"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-6-social-feed",
+          "name": "Social Media Feed",
+          "selector": ".instagram",
+          "style": null,
+          "blocks": [
+            "social-feed"
+          ],
+          "defaultContent": [
+            ".instagram__title"
+          ]
+        },
+        {
+          "id": "section-7-footer",
+          "name": "Footer",
+          "selector": "footer.footer",
+          "style": "dark",
+          "blocks": [
+            "footer"
+          ],
+          "defaultContent": []
+        }
+      ]
+    }
+  ]
+}

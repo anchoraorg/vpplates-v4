@@ -1,0 +1,40 @@
+{
+  "variantName": "tabs-promo-gallery",
+  "baseBlock": "tabs",
+  "version": "1.0.0",
+  "created": "2026-04-02T15:04:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.vplates.com.au/",
+    "originPage": "homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "product-gallery",
+    "imagePattern": "large",
+    "structure": "tab-selector + carousel-slides with image + title + description + CTA"
+  },
+  "contentPattern": {
+    "structure": "7 tabs (New, Sports, Special Interest, Premium, Slimline Black, Business, Motorbike) + carousel per tab",
+    "buttonCount": 1,
+    "imageCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "product category showcases",
+      "tabbed product galleries",
+      "category browsing interfaces"
+    ],
+    "notSuitableFor": [
+      "simple FAQ tabs",
+      "text-only tab content",
+      "settings/configuration tabs"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-04-02T15:04:00.000Z"
+  }
+}

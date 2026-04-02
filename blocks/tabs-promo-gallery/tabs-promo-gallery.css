@@ -105,20 +105,15 @@
   text-decoration: none;
   display: inline-block;
   margin-bottom: 16px;
-}
-
-.tabs-promo-gallery .tabs-promo-gallery-panel a:hover {
-  text-decoration: underline;
-}
-
-/* Override default button styling for links in this block */
-.tabs-promo-gallery .tabs-promo-gallery-panel p a {
   background: transparent;
   border: none;
   border-radius: 0;
   padding: 0;
-  color: var(--color-brand-green, #43b02a);
   font-size: inherit;
+}
+
+.tabs-promo-gallery .tabs-promo-gallery-panel a:hover {
+  text-decoration: underline;
 }
 
 @media (width >= 600px) {

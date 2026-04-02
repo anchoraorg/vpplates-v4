@@ -36,11 +36,7 @@
   border: none;
   border-radius: 0;
   gap: 16px;
-  transition: background-color 0.2s;
-}
-
-.cta-tiles .cta-tiles-tile-link:hover {
-  background-color: #f5f5f5;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 .cta-tiles .cta-tiles-card-content {
@@ -54,11 +50,13 @@
   font-size: 1.1rem;
   font-weight: 900;
   color: var(--color-text-dark, #231f20);
+  transition: color 0.2s;
 }
 
 .cta-tiles .cta-tiles-card-desc {
   font-size: 0.85rem;
   color: #666;
+  transition: color 0.2s;
 }
 
 .cta-tiles .cta-tiles-chevron {
@@ -66,6 +64,29 @@
   color: #999;
   flex-shrink: 0;
   line-height: 1;
+  transition: color 0.2s;
+}
+
+/* Hover / focus states — after all base selectors */
+.cta-tiles .cta-tiles-tile-link:hover,
+.cta-tiles .cta-tiles-tile-link:focus {
+  background-color: var(--color-brand-green, #43b02a);
+  color: #fff;
+}
+
+.cta-tiles .cta-tiles-tile-link:hover .cta-tiles-card-title,
+.cta-tiles .cta-tiles-tile-link:focus .cta-tiles-card-title {
+  color: #fff;
+}
+
+.cta-tiles .cta-tiles-tile-link:hover .cta-tiles-card-desc,
+.cta-tiles .cta-tiles-tile-link:focus .cta-tiles-card-desc {
+  color: rgb(255 255 255 / 80%);
+}
+
+.cta-tiles .cta-tiles-tile-link:hover .cta-tiles-chevron,
+.cta-tiles .cta-tiles-tile-link:focus .cta-tiles-chevron {
+  color: #fff;
 }
 
 @media (width >= 900px) {

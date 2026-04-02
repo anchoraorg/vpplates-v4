@@ -25,7 +25,7 @@
             "template": {
               "name": "Tab",
               "model": "tabs-promo-gallery-item",
-              "title": "Tab Name",
+              "title": "New Tab",
               "content_headingType": "h3"
             }
           }

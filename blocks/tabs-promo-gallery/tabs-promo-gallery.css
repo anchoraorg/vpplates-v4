@@ -8,57 +8,45 @@
   padding: 40px 24px;
 }
 
+/* Tab list */
 .tabs-promo-gallery .tabs-promo-gallery-list {
   display: flex;
   gap: 0;
   max-width: 1200px;
-  margin: 0 auto 24px;
-  font-size: var(--body-font-size-s);
+  margin: 0 auto 32px;
   overflow-x: auto;
-  border-bottom: 2px solid #dadada;
+  justify-content: center;
 }
 
-.tabs-promo-gallery .tabs-promo-gallery-panel p {
-  color: var(--color-body, #333);
-  line-height: 1.6;
-}
-
-.tabs-promo-gallery .tabs-promo-gallery-list button {
+.tabs-promo-gallery .tabs-promo-gallery-tab {
   flex: 0 0 max-content;
   margin: 0;
   border: none;
-  border-bottom: 3px solid transparent;
+  border-bottom: 2px solid transparent;
   border-radius: 0;
   padding: 12px 20px;
   background-color: transparent;
   color: var(--color-text-dark, #231f20);
   font-family: var(--font-heading);
   font-weight: bold;
-  font-size: 0.95rem;
-  line-height: unset;
-  text-align: center;
+  font-size: 1rem;
   cursor: pointer;
   transition: border-color 0.2s, color 0.2s;
 }
 
-.tabs-promo-gallery .tabs-promo-gallery-list button p {
-  margin: 0;
-}
-
-.tabs-promo-gallery .tabs-promo-gallery-list button:hover {
+.tabs-promo-gallery .tabs-promo-gallery-tab:hover {
   color: var(--color-brand-green, #43b02a);
 }
 
-.tabs-promo-gallery .tabs-promo-gallery-list button[aria-selected='true'] {
-  border-bottom-color: var(--color-brand-green, #43b02a);
-  color: var(--color-brand-green, #43b02a);
-  cursor: initial;
+.tabs-promo-gallery .tabs-promo-gallery-tab[aria-selected='true'] {
+  border-bottom-color: var(--color-text-dark, #231f20);
+  color: var(--color-text-dark, #231f20);
 }
 
+/* Tab panels */
 .tabs-promo-gallery .tabs-promo-gallery-panel {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 24px 0;
   overflow: hidden;
 }
 
@@ -66,76 +54,161 @@
   display: none;
 }
 
-/* Hide tab label cell (kept in DOM for UE authoring) */
 .tabs-promo-gallery .tabs-promo-gallery-label {
   display: none;
 }
 
-/* Empty state */
-.tabs-promo-gallery .tabs-promo-gallery-empty {
-  text-align: center;
-  color: #999;
-  font-style: italic;
-  padding: 40px 0;
+/* Carousel */
+.tabs-promo-gallery .tabs-promo-gallery-carousel {
+  position: relative;
 }
 
-/* Product card styling within tab content */
-.tabs-promo-gallery .tabs-promo-gallery-panel h3 {
+.tabs-promo-gallery .tabs-promo-gallery-track {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Product cards */
+.tabs-promo-gallery .tabs-promo-gallery-card {
+  display: none;
+  gap: 0;
+}
+
+.tabs-promo-gallery .tabs-promo-gallery-card.active {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Left: dark panel */
+.tabs-promo-gallery .tabs-promo-gallery-card-panel {
+  background-color: var(--color-black, #000);
+  color: #fff;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+  position: relative;
+  overflow: hidden;
+}
+
+.tabs-promo-gallery .tabs-promo-gallery-card-panel h4 {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
-  color: var(--color-text-dark, #231f20);
-  margin: 0 0 16px;
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 0 0 12px;
+  color: #fff;
 }
 
-.tabs-promo-gallery .tabs-promo-gallery-panel picture,
-.tabs-promo-gallery .tabs-promo-gallery-panel picture img {
-  width: 100%;
-  max-height: 350px;
-  object-fit: cover;
-  border-radius: 8px;
+.tabs-promo-gallery .tabs-promo-gallery-card-panel p {
+  font-size: 0.9rem;
+  color: rgb(255 255 255 / 85%);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.tabs-promo-gallery .tabs-promo-gallery-card-panel picture {
+  display: block;
+  margin-top: 16px;
+}
+
+.tabs-promo-gallery .tabs-promo-gallery-card-panel img {
+  max-width: 200px;
+  height: auto;
   display: block;
 }
 
-.tabs-promo-gallery .tabs-promo-gallery-panel h4 {
-  font-family: var(--font-heading);
-  font-size: 1.2rem;
-  color: var(--color-text-dark, #231f20);
-  margin: 20px 0 8px;
+/* Right: description + CTA */
+.tabs-promo-gallery .tabs-promo-gallery-card-content {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.tabs-promo-gallery .tabs-promo-gallery-panel a {
-  color: var(--color-brand-green, #43b02a);
-  font-weight: bold;
-  text-decoration: none;
+.tabs-promo-gallery .tabs-promo-gallery-card-content p {
+  color: var(--color-body, #333);
+  line-height: 1.6;
+  margin: 0 0 20px;
+}
+
+.tabs-promo-gallery .tabs-promo-gallery-cta {
   display: inline-block;
-  margin-bottom: 16px;
+  border: 2px solid var(--color-text-dark, #231f20);
+  color: var(--color-text-dark, #231f20);
   background: transparent;
-  border: none;
+  padding: 10px 24px;
+  font-family: var(--font-heading);
+  font-weight: bold;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.tabs-promo-gallery .tabs-promo-gallery-cta:hover {
+  background-color: var(--color-text-dark, #231f20);
+  color: #fff;
+}
+
+/* Carousel controls */
+.tabs-promo-gallery .tabs-promo-gallery-controls {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 32px;
+}
+
+.tabs-promo-gallery .tabs-promo-gallery-prev,
+.tabs-promo-gallery .tabs-promo-gallery-next {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #ddd;
   border-radius: 0;
-  padding: 0;
-  font-size: inherit;
+  background: #fff;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--color-brand-green, #43b02a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
 }
 
-.tabs-promo-gallery .tabs-promo-gallery-panel a:hover {
-  text-decoration: underline;
+.tabs-promo-gallery .tabs-promo-gallery-prev:disabled,
+.tabs-promo-gallery .tabs-promo-gallery-next:disabled {
+  color: #ccc;
+  cursor: not-allowed;
 }
 
-@media (width >= 600px) {
-  .tabs-promo-gallery .tabs-promo-gallery-list {
-    font-size: var(--body-font-size-s);
-  }
+.tabs-promo-gallery .tabs-promo-gallery-prev:hover:not(:disabled),
+.tabs-promo-gallery .tabs-promo-gallery-next:hover:not(:disabled) {
+  background-color: #f0f0f0;
 }
 
+/* Desktop: side-by-side card layout */
 @media (width >= 900px) {
   .tabs-promo-gallery {
     padding: 60px 32px;
   }
 
-  .tabs-promo-gallery .tabs-promo-gallery-list {
-    font-size: var(--body-font-size-m);
+  .tabs-promo-gallery .tabs-promo-gallery-card.active {
+    flex-direction: row;
   }
 
-  .tabs-promo-gallery .tabs-promo-gallery-panel picture img {
-    max-height: 400px;
+  .tabs-promo-gallery .tabs-promo-gallery-card-panel {
+    flex: 0 0 45%;
+    min-height: 360px;
+    padding: 40px;
+  }
+
+  .tabs-promo-gallery .tabs-promo-gallery-card-panel h4 {
+    font-size: 2.5rem;
+  }
+
+  .tabs-promo-gallery .tabs-promo-gallery-card-content {
+    flex: 1;
+    padding: 40px 48px;
   }
 }

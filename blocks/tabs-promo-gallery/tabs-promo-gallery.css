@@ -18,6 +18,11 @@
   border-bottom: 2px solid #dadada;
 }
 
+.tabs-promo-gallery .tabs-promo-gallery-panel p {
+  color: var(--color-body, #333);
+  line-height: 1.6;
+}
+
 .tabs-promo-gallery .tabs-promo-gallery-list button {
   flex: 0 0 max-content;
   margin: 0;
@@ -36,22 +41,17 @@
   transition: border-color 0.2s, color 0.2s;
 }
 
-.tabs-promo-gallery .tabs-promo-gallery-panel p {
-  color: var(--color-body, #333);
-  line-height: 1.6;
-}
-
 .tabs-promo-gallery .tabs-promo-gallery-list button p {
   margin: 0;
 }
 
 .tabs-promo-gallery .tabs-promo-gallery-list button:hover {
-  color: var(--color-brand-green, #43B02A);
+  color: var(--color-brand-green, #43b02a);
 }
 
 .tabs-promo-gallery .tabs-promo-gallery-list button[aria-selected='true'] {
-  border-bottom-color: var(--color-brand-green, #43B02A);
-  color: var(--color-brand-green, #43B02A);
+  border-bottom-color: var(--color-brand-green, #43b02a);
+  color: var(--color-brand-green, #43b02a);
   cursor: initial;
 }
 
@@ -59,33 +59,66 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 24px 0;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .tabs-promo-gallery .tabs-promo-gallery-panel[aria-hidden='true'] {
   display: none;
 }
 
+/* Tab content: first div is label (hidden), second is content */
+.tabs-promo-gallery .tabs-promo-gallery-panel > div:first-child {
+  display: none;
+}
+
+.tabs-promo-gallery .tabs-promo-gallery-panel > div:last-child {
+  display: block;
+}
+
+/* Product card styling within tab content */
+.tabs-promo-gallery .tabs-promo-gallery-panel h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-text-dark, #231f20);
+  margin: 0 0 16px;
+}
+
+.tabs-promo-gallery .tabs-promo-gallery-panel picture,
 .tabs-promo-gallery .tabs-promo-gallery-panel picture img {
   width: 100%;
-  height: 300px;
+  max-height: 350px;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 8px;
+  display: block;
 }
 
-.tabs-promo-gallery .tabs-promo-gallery-panel h3,
 .tabs-promo-gallery .tabs-promo-gallery-panel h4 {
   font-family: var(--font-heading);
+  font-size: 1.2rem;
   color: var(--color-text-dark, #231f20);
-  margin: 16px 0 8px;
+  margin: 20px 0 8px;
 }
 
-.tabs-promo-gallery .tabs-promo-gallery-panel a.button {
-  background-color: var(--color-brand-green, #43B02A);
-  color: #fff;
-  border: none;
-  padding: 10px 24px;
+.tabs-promo-gallery .tabs-promo-gallery-panel a {
+  color: var(--color-brand-green, #43b02a);
   font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.tabs-promo-gallery .tabs-promo-gallery-panel a:hover {
+  text-decoration: underline;
+}
+
+/* Override default button styling for links in this block */
+.tabs-promo-gallery .tabs-promo-gallery-panel p a {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  color: var(--color-brand-green, #43b02a);
+  font-size: inherit;
 }
 
 @media (width >= 600px) {
@@ -104,6 +137,6 @@
   }
 
   .tabs-promo-gallery .tabs-promo-gallery-panel picture img {
-    height: 400px;
+    max-height: 400px;
   }
 }

@@ -6,7 +6,7 @@
 .cta-tiles {
   background-color: #fff;
   padding: 0;
-  border-bottom: 4px solid var(--color-brand-green, #43b02a);
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .cta-tiles > ul {
@@ -25,16 +25,10 @@
   padding: 0;
 }
 
-.cta-tiles .cta-tiles-card-image {
+/* Hide empty image column */
+.cta-tiles .cta-tiles-card-image,
+.cta-tiles .cta-tiles-card-body:empty {
   display: none;
-}
-
-/* Empty state */
-.cta-tiles .cta-tiles-empty {
-  text-align: center;
-  color: #999;
-  font-style: italic;
-  padding: 40px 20px;
 }
 
 .cta-tiles .cta-tiles-card-body {
@@ -57,7 +51,7 @@
 }
 
 .cta-tiles .cta-tiles-card-body a:hover {
-  background-color: #f9f9f9;
+  background-color: #f5f5f5;
 }
 
 .cta-tiles .cta-tiles-card-body a::after {

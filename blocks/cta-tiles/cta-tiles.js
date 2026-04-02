@@ -3,7 +3,7 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
 export default function decorate(block) {
   // Filter to rows that have actual content
   const rows = [...block.children].filter(
-    (row) => row.textContent.trim() || row.querySelector('picture'),
+    (row) => row.textContent.trim(),
   );
 
   // If no content rows, leave DOM untouched for Universal Editor to manage
@@ -13,60 +13,51 @@ export default function decorate(block) {
   rows.forEach((row) => {
     const li = document.createElement('li');
     moveInstrumentation(row, li);
-    while (row.firstElementChild) li.append(row.firstElementChild);
 
-    // Process each child div in the li
-    [...li.children].forEach((div) => {
-      const pic = div.querySelector('picture');
-      if (pic && div.children.length === 1) {
-        div.className = 'cta-tiles-card-image';
-      } else {
-        div.className = 'cta-tiles-card-body';
+    // New model: 3 cells per row → heading | description | link
+    const cells = [...row.children];
+    const headingCell = cells[0];
+    const descCell = cells[1];
+    const linkCell = cells[2];
 
-        // Restructure: wrap title + description in a link
-        const link = div.querySelector('a');
-        const strong = div.querySelector('strong');
-        if (link && strong) {
-          const { href } = link;
-          const titleText = strong.textContent.trim();
+    const headingText = headingCell ? headingCell.textContent.trim() : '';
+    const descText = descCell ? descCell.textContent.trim() : '';
+    const linkEl = linkCell ? linkCell.querySelector('a') : null;
+    const href = linkEl ? linkEl.href : '#';
 
-          // Collect description text from non-link, non-title paragraphs
-          let descText = '';
-          div.querySelectorAll('p').forEach((p) => {
-            if (!p.querySelector('strong') && !p.querySelector('a')) {
-              descText = p.textContent.trim();
-            }
-          });
+    // Build tile as a single clickable link
+    const tileLink = document.createElement('a');
+    tileLink.href = href;
+    tileLink.className = 'cta-tiles-tile-link';
 
-          // Rebuild the div contents
-          div.textContent = '';
-          const newLink = document.createElement('a');
-          newLink.href = href;
-          newLink.className = 'cta-tiles-tile-link';
+    const content = document.createElement('div');
+    content.className = 'cta-tiles-card-content';
 
-          const content = document.createElement('div');
-          content.className = 'cta-tiles-card-content';
+    if (headingText) {
+      const titleSpan = document.createElement('span');
+      titleSpan.className = 'cta-tiles-card-title';
+      titleSpan.textContent = headingText;
+      content.append(titleSpan);
+    }
 
-          const titleSpan = document.createElement('span');
-          titleSpan.className = 'cta-tiles-card-title';
-          titleSpan.textContent = titleText;
-          content.append(titleSpan);
+    if (descText) {
+      const descSpan = document.createElement('span');
+      descSpan.className = 'cta-tiles-card-desc';
+      descSpan.textContent = descText;
+      content.append(descSpan);
+    }
 
-          if (descText) {
-            const descSpan = document.createElement('span');
-            descSpan.className = 'cta-tiles-card-desc';
-            descSpan.textContent = descText;
-            content.append(descSpan);
-          }
+    // Chevron arrow
+    const chevron = document.createElement('span');
+    chevron.className = 'cta-tiles-chevron';
+    chevron.setAttribute('aria-hidden', 'true');
+    chevron.textContent = '›';
 
-          newLink.append(content);
-          div.append(newLink);
-        }
-      }
-    });
-
+    tileLink.append(content, chevron);
+    li.append(tileLink);
     ul.append(li);
   });
+
   block.textContent = '';
   block.append(ul);
 }

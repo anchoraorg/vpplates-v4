@@ -221,18 +221,25 @@
     "id": "cta-tile",
     "fields": [
       {
-        "component": "reference",
+        "component": "text",
         "valueType": "string",
-        "name": "image",
-        "label": "Icon",
-        "multi": false
+        "name": "heading",
+        "label": "Title",
+        "value": ""
       },
       {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
+        "component": "text",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "link",
+        "label": "Link URL",
+        "value": ""
       }
     ]
   },

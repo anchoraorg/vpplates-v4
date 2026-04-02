@@ -4,8 +4,9 @@
 }
 
 .cta-tiles {
-  background-color: var(--color-black, #000);
+  background-color: #fff;
   padding: 0;
+  border-bottom: 4px solid var(--color-brand-green, #43b02a);
 }
 
 .cta-tiles > ul {
@@ -19,8 +20,7 @@
 }
 
 .cta-tiles > ul > li {
-  border: none;
-  border-bottom: 1px solid rgb(255 255 255 / 15%);
+  border-bottom: 1px solid #e0e0e0;
   background-color: transparent;
   padding: 0;
 }
@@ -34,44 +34,48 @@
   padding: 0;
 }
 
-/* Hide description paragraphs and strong text - only show the link */
-.cta-tiles .cta-tiles-card-body p {
-  display: none;
-}
-
-.cta-tiles .cta-tiles-card-body p:last-child {
-  display: block;
-  margin: 0;
-}
-
-/* Style the link as the full tile */
 .cta-tiles .cta-tiles-card-body a {
-  color: #fff;
+  color: var(--color-text-dark, #231f20);
   text-decoration: none;
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 0.9rem;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 18px 16px;
+  justify-content: space-between;
+  padding: 24px 20px;
   background: transparent;
   border: none;
   border-radius: 0;
-  white-space: nowrap;
-  transition: color 0.2s;
+  gap: 16px;
+  transition: background-color 0.2s;
 }
 
 .cta-tiles .cta-tiles-card-body a:hover {
-  color: var(--color-brand-green, #43b02a);
-  background: transparent;
+  background-color: #f9f9f9;
 }
 
 .cta-tiles .cta-tiles-card-body a::after {
   content: '›';
-  font-size: 1.5em;
+  font-size: 2rem;
+  color: #999;
+  flex-shrink: 0;
   line-height: 1;
+}
+
+.cta-tiles .cta-tiles-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cta-tiles .cta-tiles-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--color-text-dark, #231f20);
+}
+
+.cta-tiles .cta-tiles-card-desc {
+  font-size: 0.85rem;
+  color: #666;
 }
 
 @media (width >= 900px) {
@@ -81,7 +85,7 @@
 
   .cta-tiles > ul > li {
     border-bottom: none;
-    border-right: 1px solid rgb(255 255 255 / 15%);
+    border-right: 1px solid #e0e0e0;
   }
 
   .cta-tiles > ul > li:last-child {
@@ -89,7 +93,10 @@
   }
 
   .cta-tiles .cta-tiles-card-body a {
-    padding: 20px 24px;
-    font-size: 0.95rem;
+    padding: 28px 24px;
+  }
+
+  .cta-tiles .cta-tiles-card-title {
+    font-size: 1.15rem;
   }
 }

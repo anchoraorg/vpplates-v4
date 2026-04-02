@@ -9,11 +9,8 @@ export default async function decorate(block) {
     (child) => child.firstElementChild && child.firstElementChild.textContent.trim(),
   );
 
-  // If no content rows, show empty state
-  if (rows.length === 0) {
-    block.innerHTML = '<p class="tabs-promo-gallery-empty">Add tab items using the + button to get started.</p>';
-    return;
-  }
+  // If no content rows, leave DOM untouched for Universal Editor to manage
+  if (rows.length === 0) return;
 
   // Build tablist
   const tablist = document.createElement('div');

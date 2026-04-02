@@ -6,11 +6,8 @@ export default function decorate(block) {
     (row) => row.textContent.trim() || row.querySelector('picture'),
   );
 
-  // Handle empty state (freshly added in Universal Editor)
-  if (rows.length === 0) {
-    block.innerHTML = '<p class="cta-tiles-empty">Add CTA Tile items using the + button.</p>';
-    return;
-  }
+  // If no content rows, leave DOM untouched for Universal Editor to manage
+  if (rows.length === 0) return;
 
   const ul = document.createElement('ul');
   rows.forEach((row) => {

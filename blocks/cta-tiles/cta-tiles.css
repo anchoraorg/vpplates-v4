@@ -25,15 +25,15 @@
   padding: 0;
 }
 
+.cta-tiles .cta-tiles-card-body {
+  margin: 0;
+  padding: 0;
+}
+
 /* Hide empty image column */
 .cta-tiles .cta-tiles-card-image,
 .cta-tiles .cta-tiles-card-body:empty {
   display: none;
-}
-
-.cta-tiles .cta-tiles-card-body {
-  margin: 0;
-  padding: 0;
 }
 
 .cta-tiles .cta-tiles-card-body a {

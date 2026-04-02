@@ -66,13 +66,17 @@
   display: none;
 }
 
-/* Tab content: first div is label (hidden), second is content */
-.tabs-promo-gallery .tabs-promo-gallery-panel > div:first-child {
+/* Hide tab label cell (kept in DOM for UE authoring) */
+.tabs-promo-gallery .tabs-promo-gallery-label {
   display: none;
 }
 
-.tabs-promo-gallery .tabs-promo-gallery-panel > div:last-child {
-  display: block;
+/* Empty state */
+.tabs-promo-gallery .tabs-promo-gallery-empty {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+  padding: 40px 0;
 }
 
 /* Product card styling within tab content */

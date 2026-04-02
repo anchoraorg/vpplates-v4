@@ -1,39 +1,43 @@
 // eslint-disable-next-line import/no-unresolved
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
-// keep track globally of the number of tab blocks on the page
 let tabBlockCnt = 0;
 
 export default async function decorate(block) {
-  // build tablist
+  // Filter to only rows that have content (skip empty rows from fresh UE drop)
+  const rows = [...block.children].filter(
+    (child) => child.firstElementChild && child.firstElementChild.textContent.trim(),
+  );
+
+  // If no content rows, show empty state
+  if (rows.length === 0) {
+    block.innerHTML = '<p class="tabs-promo-gallery-empty">Add tab items using the + button to get started.</p>';
+    return;
+  }
+
+  // Build tablist
   const tablist = document.createElement('div');
   tablist.className = 'tabs-promo-gallery-list';
   tablist.setAttribute('role', 'tablist');
   tablist.id = `tablist-${tabBlockCnt += 1}`;
 
-  // the first cell of each row is the title of the tab
-  const tabHeadings = [...block.children]
-    .filter((child) => child.firstElementChild && child.firstElementChild.children.length > 0)
-    .map((child) => child.firstElementChild);
-
-  tabHeadings.forEach((tab, i) => {
+  rows.forEach((row, i) => {
     const id = `tabpanel-${tabBlockCnt}-tab-${i + 1}`;
+    const tabHeading = row.firstElementChild;
+    const tabLabel = tabHeading ? tabHeading.textContent.trim() : `Tab ${i + 1}`;
 
-    // decorate tabpanel
-    const tabpanel = block.children[i];
-    tabpanel.className = 'tabs-promo-gallery-panel';
-    tabpanel.id = id;
-    tabpanel.setAttribute('aria-hidden', !!i);
-    tabpanel.setAttribute('aria-labelledby', `tab-${id}`);
-    tabpanel.setAttribute('role', 'tabpanel');
+    // Decorate the row as a tabpanel
+    row.className = 'tabs-promo-gallery-panel';
+    row.id = id;
+    row.setAttribute('aria-hidden', !!i);
+    row.setAttribute('aria-labelledby', `tab-${id}`);
+    row.setAttribute('role', 'tabpanel');
 
-    // build tab button
+    // Build tab button
     const button = document.createElement('button');
     button.className = 'tabs-promo-gallery-tab';
     button.id = `tab-${id}`;
-
-    button.innerHTML = tab.innerHTML;
-
+    button.textContent = tabLabel;
     button.setAttribute('aria-controls', id);
     button.setAttribute('aria-selected', !i);
     button.setAttribute('role', 'tab');
@@ -46,19 +50,21 @@ export default async function decorate(block) {
       tablist.querySelectorAll('button').forEach((btn) => {
         btn.setAttribute('aria-selected', false);
       });
-      tabpanel.setAttribute('aria-hidden', false);
+      row.setAttribute('aria-hidden', false);
       button.setAttribute('aria-selected', true);
     });
 
-    // add the new tab list button, to the tablist
     tablist.append(button);
 
-    // remove the tab heading from the dom, which also removes it from the UE tree
-    tab.remove();
+    // Hide the tab title cell visually (keep in DOM for UE authoring)
+    if (tabHeading) {
+      tabHeading.classList.add('tabs-promo-gallery-label');
+    }
 
-    // remove the instrumentation from the button's h1, h2 etc (this removes it from the tree)
-    if (button.firstElementChild) {
-      moveInstrumentation(button.firstElementChild, null);
+    // Move instrumentation from heading elements inside the button
+    const headingEl = tabHeading ? tabHeading.querySelector('h1, h2, h3, h4, h5, h6') : null;
+    if (headingEl) {
+      moveInstrumentation(headingEl, null);
     }
   });
 

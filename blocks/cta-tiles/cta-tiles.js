@@ -1,8 +1,19 @@
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
+  // Filter to rows that have actual content
+  const rows = [...block.children].filter(
+    (row) => row.textContent.trim() || row.querySelector('picture'),
+  );
+
+  // Handle empty state (freshly added in Universal Editor)
+  if (rows.length === 0) {
+    block.innerHTML = '<p class="cta-tiles-empty">Add CTA Tile items using the + button.</p>';
+    return;
+  }
+
   const ul = document.createElement('ul');
-  [...block.children].forEach((row) => {
+  rows.forEach((row) => {
     const li = document.createElement('li');
     moveInstrumentation(row, li);
     while (row.firstElementChild) li.append(row.firstElementChild);
@@ -19,7 +30,7 @@ export default function decorate(block) {
         const link = div.querySelector('a');
         const strong = div.querySelector('strong');
         if (link && strong) {
-          const href = link.href;
+          const { href } = link;
           const titleText = strong.textContent.trim();
 
           // Collect description text from non-link, non-title paragraphs

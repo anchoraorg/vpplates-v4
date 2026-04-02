@@ -29,6 +29,14 @@
   display: none;
 }
 
+/* Empty state */
+.cta-tiles .cta-tiles-empty {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+  padding: 40px 20px;
+}
+
 .cta-tiles .cta-tiles-card-body {
   margin: 0;
   padding: 0;

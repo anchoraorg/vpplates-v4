@@ -110,7 +110,7 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
-  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
+  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/content/nav';
   const fragment = await loadFragment(navPath);
 
   // decorate nav DOM
@@ -125,12 +125,12 @@ export default async function decorate(block) {
     if (section) section.classList.add(`nav-${c}`);
   });
 
-  const navBrand = nav.querySelector('.nav-brand');
-  const brandLink = navBrand.querySelector('.button');
-  if (brandLink) {
-    brandLink.className = '';
-    brandLink.closest('.button-container').className = '';
-  }
+  // Remove button classes from brand and tools sections
+  nav.querySelectorAll('.nav-brand .button, .nav-tools .button').forEach((btn) => {
+    btn.className = '';
+    const container = btn.closest('.button-container');
+    if (container) container.className = '';
+  });
 
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 30" fill="currentColor">
+  <path d="M0 2.5L12 27.5h4.5L4.5 2.5H0z"/>
+  <path d="M4.5 2.5L16.5 27.5 28.5 2.5h-5L16.5 18 9.5 2.5H4.5z"/>
+  <text x="32" y="22" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0.5">vic roads</text>
+</svg>

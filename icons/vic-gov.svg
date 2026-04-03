@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60" fill="currentColor">
+  <polygon points="50,0 20,55 80,55"/>
+  <text x="28" y="42" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#000" letter-spacing="0.3">VICTORIA</text>
+  <text x="33" y="52" font-family="Arial, sans-serif" font-size="6" fill="#000">State</text>
+  <text x="30" y="58" font-family="Arial, sans-serif" font-size="6" fill="#000">Government</text>
+</svg>

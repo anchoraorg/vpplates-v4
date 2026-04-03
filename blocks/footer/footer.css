@@ -23,7 +23,7 @@ footer .footer a:hover {
   color: #fff;
 }
 
-/* Top area: nav + social + partners in a row */
+/* Top sections */
 footer .footer .footer-nav,
 footer .footer .footer-social,
 footer .footer .footer-partners {
@@ -42,7 +42,7 @@ footer .footer .footer-nav li {
   margin-bottom: 16px;
 }
 
-footer .footer .footer-nav a {
+footer .footer .footer-nav li a {
   color: #fff;
   font-weight: 600;
   font-size: 0.95rem;
@@ -56,7 +56,7 @@ footer .footer .footer-nav-arrow {
   font-size: 1.1rem;
 }
 
-/* Social links */
+/* Social icons */
 footer .footer .footer-social ul {
   list-style: none;
   padding: 0;
@@ -66,13 +66,18 @@ footer .footer .footer-social ul {
   justify-content: center;
 }
 
-footer .footer .footer-social img {
-  width: 32px;
-  height: 32px;
-  filter: brightness(0) invert(1);
+footer .footer .footer-social-icon {
+  display: flex;
+  align-items: center;
+  color: #fff;
 }
 
-/* Partner logos */
+footer .footer .footer-social-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* Partner links */
 footer .footer .footer-partners ul {
   list-style: none;
   padding: 0;
@@ -83,13 +88,19 @@ footer .footer .footer-partners ul {
   align-items: center;
 }
 
+footer .footer .footer-partner-link {
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
 footer .footer .footer-partners img {
   height: 36px;
   width: auto;
   filter: brightness(0) invert(1);
 }
 
-/* Legal links - bottom bar */
+/* Legal links */
 footer .footer .footer-legal {
   border-top: 1px solid #333;
   padding: 20px 0;
@@ -104,12 +115,12 @@ footer .footer .footer-legal ul {
   flex-wrap: wrap;
 }
 
-footer .footer .footer-legal a {
+footer .footer .footer-legal li a {
   color: #888;
   font-size: 0.8rem;
 }
 
-footer .footer .footer-legal a:hover {
+footer .footer .footer-legal li a:hover {
   color: #fff;
 }
 
@@ -118,35 +129,25 @@ footer .footer .footer-legal a:hover {
     padding: 0 32px;
   }
 
-  /* Top row: 3 columns */
-  footer .footer .footer-nav,
-  footer .footer .footer-social,
-  footer .footer .footer-partners {
+  footer .footer .footer-nav {
     display: inline-block;
     vertical-align: top;
-  }
-
-  footer .footer .footer-nav {
     width: 30%;
   }
 
   footer .footer .footer-social {
-    width: 35%;
-    text-align: center;
     display: inline-flex;
+    vertical-align: top;
+    width: 35%;
     align-items: center;
     justify-content: center;
   }
 
   footer .footer .footer-partners {
-    width: 30%;
-    text-align: right;
     display: inline-flex;
+    vertical-align: top;
+    width: 30%;
     align-items: center;
     justify-content: flex-end;
-  }
-
-  footer .footer .footer-legal {
-    padding: 20px 0;
   }
 }

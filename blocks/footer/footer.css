@@ -84,7 +84,6 @@ footer .footer .footer-social-icon {
 footer .footer .footer-social-img {
   width: 32px;
   height: 32px;
-  filter: brightness(0) invert(1);
 }
 
 /* Partner links */
@@ -117,7 +116,6 @@ footer .footer .footer-partner-link {
 footer .footer .footer-partner-img {
   height: 36px;
   width: auto;
-  filter: brightness(0) invert(1);
 }
 
 /* Legal links */

@@ -20,6 +20,7 @@
       "columns",
       "columns-feature",
       "tabs-promo-gallery",
+      "tabs-promo-gallery-v2",
       "social-feed",
       "fragment"
     ]
@@ -76,6 +77,12 @@
     "id": "tabs-promo-gallery",
     "components": [
       "tabs-promo-gallery-item"
+    ]
+  },
+  {
+    "id": "tabs-promo-gallery-v2",
+    "components": [
+      "promo-gallery-item"
     ]
   }
 ]

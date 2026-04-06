@@ -387,5 +387,52 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "promo-gallery-item",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "category",
+        "label": "Category (Tab Name)",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "panel_color",
+        "label": "Panel Color (hex)",
+        "value": "#000000"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "panel_title",
+        "label": "Product Title",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "panel_text",
+        "label": "Panel Description",
+        "value": ""
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Product Image",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "value": "",
+        "label": "Content (description + CTA link)",
+        "valueType": "string"
+      }
+    ]
   }
 ]

@@ -8,14 +8,13 @@
 .hero-plate-checker {
   background-color: #000;
   color: #fff;
-  min-height: calc(100vh - 60px);
 }
 
 /* .quick-combo__container → black bg with top border */
 .hero-plate-checker .hero-plate-checker-content {
   border-top: 2px solid #272727;
   background: #000;
-  min-height: inherit;
+  min-height: 500px;
   position: relative;
   max-width: 1620px;
   margin: 0 auto;
@@ -246,7 +245,7 @@
 
 @media (width >= 769px) {
   .hero-plate-checker {
-    min-height: calc(100vh - 190px);
+    /* min-height removed — causes infinite height in UE authoring iframe */
   }
 
   .hero-plate-checker .hero-plate-checker-content {
@@ -283,7 +282,7 @@
 
 @media (width >= 1080px) {
   .hero-plate-checker {
-    min-height: calc(100vh - 250px);
+    /* min-height removed — causes infinite height in UE authoring iframe */
   }
 
   .hero-plate-checker .hero-plate-checker-content {

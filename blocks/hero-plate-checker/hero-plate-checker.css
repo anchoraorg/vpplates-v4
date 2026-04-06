@@ -6,6 +6,7 @@
 
 /* .quick-combo → full viewport dark section */
 .hero-plate-checker {
+  background-color: #000;
   color: #fff;
   min-height: calc(100vh - 60px);
 }

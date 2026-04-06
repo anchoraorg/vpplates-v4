@@ -1,113 +1,177 @@
+/* CTA Tiles — mapped from vplates.com.au .cta-tiles styles */
+
+/* .Tiles.List / outer container — hidden on mobile, black background */
 .cta-tiles-container .cta-tiles-wrapper {
   max-width: unset;
   padding: 0;
 }
 
 .cta-tiles {
-  background-color: #fff;
-  padding: 0;
-  border-bottom: 1px solid #e0e0e0;
+  display: none;
+  color: #231f20;
+  background-color: #000;
 }
 
+/* .cta-tiles__list */
 .cta-tiles > ul {
+  width: 100%;
+  max-width: 1580px;
+  margin: 0 auto;
+  display: flex;
+  background: #fff;
   list-style: none;
   padding: 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
-  max-width: 1200px;
-  margin: 0 auto;
+  height: 80px;
 }
 
+/* .cta-tiles__item */
 .cta-tiles > ul > li {
-  border-bottom: 1px solid #e0e0e0;
-  background-color: transparent;
+  flex-basis: 0;
+  flex-grow: 1;
+  list-style: none;
   padding: 0;
+  display: block;
+  margin: 0;
+  height: 100%;
 }
 
+/* .cta-tiles__item > a */
 .cta-tiles .cta-tiles-tile-link {
-  color: var(--color-text-dark, #231f20);
   text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 24px 20px;
+  position: relative;
+  display: block;
+  height: 100%;
+  color: inherit;
   background: transparent;
   border: none;
   border-radius: 0;
-  gap: 16px;
-  transition: background-color 0.2s, color 0.2s;
 }
 
-.cta-tiles .cta-tiles-card-content {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.cta-tiles .cta-tiles-card-title {
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
-  font-weight: 900;
-  color: var(--color-text-dark, #231f20);
-  transition: color 0.2s;
-}
-
-.cta-tiles .cta-tiles-card-desc {
-  font-size: 0.85rem;
-  color: #666;
-  transition: color 0.2s;
-}
-
-.cta-tiles .cta-tiles-chevron {
-  font-size: 2rem;
+/* .cta-tiles__item > a::after — chevron arrow */
+.cta-tiles .cta-tiles-tile-link::after {
+  content: '›';
   color: #999;
-  flex-shrink: 0;
+  font-size: 24px;
+  position: absolute;
+  bottom: 50%;
+  right: 5px;
+  transform: translateY(50%);
   line-height: 1;
-  transition: color 0.2s;
 }
 
-/* Hover / focus states — after all base selectors */
-.cta-tiles .cta-tiles-tile-link:hover,
-.cta-tiles .cta-tiles-tile-link:focus {
-  background-color: var(--color-brand-green, #43b02a);
+/* Hide the JS-generated chevron span (using CSS ::after instead) */
+.cta-tiles .cta-tiles-chevron {
+  display: none;
+}
+
+/* .cta-tiles__item:hover */
+.cta-tiles > ul > li:hover {
+  background-color: #43b02a;
+}
+
+.cta-tiles > ul > li:hover .cta-tiles-tile-link {
   color: #fff;
 }
 
-.cta-tiles .cta-tiles-tile-link:hover .cta-tiles-card-title,
-.cta-tiles .cta-tiles-tile-link:focus .cta-tiles-card-title {
+.cta-tiles > ul > li:hover .cta-tiles-tile-link::after {
   color: #fff;
 }
 
-.cta-tiles .cta-tiles-tile-link:hover .cta-tiles-card-desc,
-.cta-tiles .cta-tiles-tile-link:focus .cta-tiles-card-desc {
-  color: rgb(255 255 255 / 80%);
+/* .cta-tiles__item:focus-within */
+.cta-tiles > ul > li:focus-within {
+  background-color: #43b02a;
 }
 
-.cta-tiles .cta-tiles-tile-link:hover .cta-tiles-chevron,
-.cta-tiles .cta-tiles-tile-link:focus .cta-tiles-chevron {
+.cta-tiles > ul > li:focus-within .cta-tiles-tile-link {
   color: #fff;
 }
 
-@media (width >= 900px) {
+.cta-tiles > ul > li:focus-within .cta-tiles-tile-link::after {
+  color: #fff;
+}
+
+/* .cta-tiles__link — inner content wrapper */
+.cta-tiles .cta-tiles-card-content {
+  display: block;
+  height: 100%;
+}
+
+/* .cta-tiles__title */
+.cta-tiles .cta-tiles-card-title {
+  font-family: os, Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  line-height: 1;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  height: 100%;
+  padding: 0 35px 2px 10px;
+  position: relative;
+}
+
+/* .cta-tiles__description — hidden on mobile */
+.cta-tiles .cta-tiles-card-desc {
+  display: none;
+  height: 40px;
+  text-decoration: none;
+  padding: 0 25px 2px 10px;
+  overflow: hidden;
+  font-size: 12px;
+  color: #707070;
+}
+
+/* Show block at 769px */
+@media (width >= 769px) {
+  .cta-tiles {
+    display: block;
+  }
+}
+
+/* 1080px breakpoint */
+@media (width >= 1080px) {
   .cta-tiles > ul {
-    grid-template-columns: repeat(4, 1fr);
+    height: 140px;
   }
 
-  .cta-tiles > ul > li {
-    border-bottom: none;
-    border-right: 1px solid #e0e0e0;
-  }
-
-  .cta-tiles > ul > li:last-child {
-    border-right: none;
-  }
-
-  .cta-tiles .cta-tiles-tile-link {
-    padding: 28px 24px;
+  .cta-tiles .cta-tiles-tile-link::after {
+    right: 10px;
+    font-size: 30px;
   }
 
   .cta-tiles .cta-tiles-card-title {
-    font-size: 1.15rem;
+    height: 70px;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 50px;
+    align-items: flex-end;
+  }
+
+  .cta-tiles .cta-tiles-card-desc {
+    display: block;
+    height: 70px;
+    font-size: 13px;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 50px;
+  }
+}
+
+/* 1441px breakpoint */
+@media (width >= 1441px) {
+  .cta-tiles .cta-tiles-tile-link::after {
+    right: 45px;
+  }
+
+  .cta-tiles .cta-tiles-card-title {
+    font-size: 24px;
+    padding-left: 50px;
+    padding-right: 75px;
+  }
+
+  .cta-tiles .cta-tiles-card-desc {
+    font-size: 15px;
+    padding-left: 50px;
+    padding-right: 70px;
   }
 }

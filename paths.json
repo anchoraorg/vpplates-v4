@@ -1,10 +1,10 @@
 {
   "mappings": [
-    "/content/vplates-demo/:/",
-    "/content/vplates-demo/configuration:/.helix/config.json",
-    "/content/vplates-demo/metadata:/metadata.json"
+    "/content/vplates-v4/:/",
+    "/content/vplates-v4/configuration:/.helix/config.json",
+    "/content/vplates-v4/metadata:/metadata.json"
   ],
   "includes": [
-    "/content/vplates-demo/"
+    "/content/vplates-v4/"
   ]
 }
